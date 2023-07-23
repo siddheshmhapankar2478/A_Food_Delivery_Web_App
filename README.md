@@ -1,7 +1,5 @@
 # A_Food_Delivery_Web_App
 
-https://github.com/siddheshmhapankar2478/A_Food_Delivery_Web_App/assets/72028899/22d2c51b-4af6-4397-8013-e4b412309525
-
 Below are the steps to install the project from GitHub:
 
 1. Download the Code:
