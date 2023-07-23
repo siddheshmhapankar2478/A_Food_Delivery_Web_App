@@ -8,18 +8,18 @@ const Contact = () => {
     <div className='flex flex-col mx-10 my-5'>
       <h1 className='font-bold text-xl'>Contact Us Page</h1>
       <div>
-      <div className='flex w-60 bg-[#F2553B] shadow-md m-2 p-4 cursor-pointer font-bold text-white rounded-sm'>
+      <a target='_blank' href={`mailto:${mail}`}><div className='flex w-60 bg-[#F2553B] shadow-md m-2 p-4 cursor-pointer font-bold text-white rounded-sm'>
             <p><MailOutlineIcon></MailOutlineIcon></p>
             <p className='px-5'> Mail</p>
-        </div>
-        <div className='flex w-60 bg-[#087EB8] shadow-md m-2 p-4 cursor-pointer font-bold text-white rounded-sm'>
+        </div></a>
+        <a target='_blank' href={linkedin}><div className='flex w-60 bg-[#087EB8] shadow-md m-2 p-4 cursor-pointer font-bold text-white rounded-sm'>
             <p><LinkedInIcon></LinkedInIcon></p>
             <p className='px-5'> LinkedIn</p>
-        </div>
-        <div className='flex w-60 bg-[#010001] shadow-md m-2 p-4 cursor-pointer font-bold text-white rounded-sm'>
+        </div></a>
+        <a target='_blank' href={github}><div className='flex w-60 bg-[#010001] shadow-md m-2 p-4 cursor-pointer font-bold text-white rounded-sm'>
             <p><GitHubIcon></GitHubIcon></p>
             <p className='px-5'> Github</p>
-        </div>
+        </div></a>
       </div>
     </div>
   )
