@@ -29,7 +29,7 @@ Below are the steps to install the project from GitHub:
    - Parcel will bundle the project and start a development server on `http://localhost:1234`.
 
 5. Install "Allow CORS: Access-Control-Allow-Origin" Extension:
-   - CORS extension link: https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelff
+   - CORS extension link: [https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelff](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkFmdnBfZEViRUVkVlRaR1VjZzRpNmhSZzN5UXxBQ3Jtc0tseWRfREtMMVV6Z0xFODVURWhBZFRjVUFQNGMtMFdyODVzb1dxQUpSUFRwdVplWF8yYkNMRFhuNjN1bWhBUDRXYkx5NkRtOWN6VmNEMGNTNGVlSU42MjlyczF3azltVWVOQ2s3cGs0XzJEQU1UQjVUYw&q=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fallow-cors-access-control%2Flhobafahddgcelffkeicbaginigeejlf&v=KruSUqLdxQA)
    - If your project makes API calls to external servers and you encounter CORS (Cross-Origin Resource Sharing) issues during development, you can install the "Allow CORS: Access-Control-Allow-Origin" extension in your browser. This extension allows your local development server to make API calls to external servers without encountering CORS restrictions.
    - Select the CORS extension from the browser's extension store and click on the "Install" or "Add to Chrome" button.
 
