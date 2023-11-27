@@ -1,47 +1,53 @@
-import RestroCard from "./RestroCard";
 import React from "react";
+import RestroCard from "./RestroCard";
 import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import NoSearchResult from "./NoSearchResult";
 import { Link } from "react-router-dom";
-import { CDN_URL } from "../config";
 import useOnline from "../utils/useOnline";
 import Offline from "./Offline";
 import SearchIcon from '@mui/icons-material/Search';
 import { filterData } from "../config";
+import { restaurantListMain } from "../config";
+
+
+function handleSearch(setFiltererdRestroData,allRestroData,searchTxt) {
+  const data = filterData(allRestroData, searchTxt);
+  setFiltererdRestroData(data);
+}
 const Body = () => {
   const [searchTxt, setSearchTxt] = useState("");
-  const [allRestroData, setallRestroData] = useState([]);
+  const [allRestroData, setAllRestroData] = useState([]);
   const [filtererdRestroData, setFiltererdRestroData] = useState([]);
   const isOnline=useOnline();
-
+  
   useEffect(() => {
-    getRestaurant();
+    const restaurantList = restaurantListMain.map(item => {
+    return item.info;
+    });
+    setAllRestroData(restaurantList);
+  setFiltererdRestroData(restaurantList);
+
   }, []);
-  useEffect(() => {
-    handleSearch();
-  }, [searchTxt]);
-
-  async function getRestaurant() {
-    const data = await fetch(CDN_URL);
-    const json = await data.json();
-    setallRestroData(json?.data?.cards[2]?.data?.data?.cards);
-    setFiltererdRestroData(json?.data?.cards[2]?.data?.data?.cards);
-  }
-  function handleSearch() {
-    const data = filterData(allRestroData, searchTxt);
-    setFiltererdRestroData(data);
-  }
+  // useEffect(() => {
+  //   handleSearch(setFiltererdRestroData,allRestroData,searchTxt);
+  // }, [searchTxt]);
+  useEffect(()=>{
+    console.log("filtererdRestroData");
+    console.log(filtererdRestroData);
+    console.log("filtererdRestroData");
+  },[filtererdRestroData]);
+  
   if(!isOnline)
       return <Offline/>
 
-  return allRestroData?.length === 0 ? (
+  return (allRestroData?.length) === 0 ? (
     <>
       <Shimmer />
     </>) : (
     <>
-      <div className=" flex mx-auto w-1/2 my-6 bg-white rounded-md shadow-md border border-slate-400 ">
+      <div className=" flex  mx-auto w-1/2 my-6 bg-white rounded-md shadow-md border border-slate-400 ">
           <span className='px-2 pt-3'><SearchIcon></SearchIcon></span>
           <input
             className=" w-full h-12 py-2 mr-1 focus:outline-0 text-black"
@@ -54,19 +60,19 @@ const Body = () => {
           ></input>
       </div>
 
-      <div className="flex flex-wrap mx-28 sm:justify-center ">
+      <div className=" flex flex-wrap w-[85%] mx-auto sm:justify-center mb-20">
         {filtererdRestroData?.length === 0 ? (
           <NoSearchResult />
         ) : (
           filtererdRestroData?.map((restro) => (
-            <Link to={"/restaurant/"+restro?.data?.id} key={restro?.data?.id} >
-            <RestroCard restro={restro?.data} />
+            <Link to={"/restaurant/"+restro?.id} key={restro?.id} >
+            <RestroCard restro={restro} />
             </Link>
           ))
         )}
       </div>
     </>
   );
-};
+}
 
 export default Body;

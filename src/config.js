@@ -9,8 +9,26 @@ export function filterData(allRestroData, searchTxt) {
         return d;
     });
     return data;
+
 }
 export const name="Siddhesh Mhapankar";
 export const mail="siddheshmhapankar2478@gmail.com";
 export const linkedin="https://www.linkedin.com/in/siddheshmhapankar2478/";
 export const github="https://github.com/siddheshmhapankar2478/";
+export const restaurantListMain=[
+    {
+      "info": {
+        "id": "32133",
+        "name": "Pizza Hut",
+        "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
+        "costForTwo": "₹300 for two",
+        "cuisines": [
+          "Pizzas"
+        ],
+        "avgRating": 3.9,
+        "sla": {
+          "slaString": "26 mins",
+        },
+      },
+    },
+  ]

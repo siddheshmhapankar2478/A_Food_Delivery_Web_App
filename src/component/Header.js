@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import food_delivery_logo from "../assets/Image/food_delivery_logo.png"
+import { useSelector } from "react-redux";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import food_villa_logo from "../assets/Image/food_villa_logo.png"
 import food_delivery_logo from "../assets/Image/food_delivery_logo.png"
 import { useSelector } from "react-redux";
@@ -46,7 +49,9 @@ const Header=()=>{
             </div>
 
             {/*---------------------- Mobile View------------------- */}
+            <div className={`2xl:hidden xl:hidden lg:hidden md:hidden fixed bg-[#36454F]  top-[54px] w-full ${toggle}?'left-0':'left-[-100%]'}`}>
             <div className={`2xl:hidden xl:hidden lg:hidden md:hidden fixed bg-[#36454F]  top-[54px] w-full ${toggle?'left-0':'left-[-100%]'}`}>
+
                 <ul className="">
                     <Link to="/"><li className="hover:text-[#F8781D] font-bold  px-3 py-2 mx-auto w-fit">Home</li></Link>
                     <Link to="/contact"><li className="hover:text-[#F8781D] font-bold px-3 py-2 mx-auto w-fit">Contact</li></Link>
@@ -64,6 +69,7 @@ const Header=()=>{
             </div>
                      
         </div>
+      </div>
       </div>
     );
   };

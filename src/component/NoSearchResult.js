@@ -11,7 +11,6 @@ const NoSearchResult = () => {
             <div>
               <p className='font-bold text-4xl w-fit my-2 mx-auto'>Sorry!! No Result Found :(</p>
               <p className='font-bold text-base w-fit my-2 mx-auto'>We couldn't find what you are looking for</p>
-              
             </div>
         </div>
 

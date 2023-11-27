@@ -25,4 +25,8 @@ const Contact = () => {
   )
 }
 
+<<<<<<< HEAD
 export default Contact
+=======
+export default Contact
+>>>>>>> 69a39ef55e91b98422508eddbb182efe5b909f45
