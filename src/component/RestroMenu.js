@@ -4,6 +4,7 @@ import ShimmerMenu from "./ShimmerMenu";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestroInformation from "./RestroInformation";
 import RestroMenuCard from "./RestroMenuCard";
+import { restaurantMenu } from "../config";
 
 const RestroMenu = () => {
   const param = useParams();
@@ -16,7 +17,7 @@ const RestroMenu = () => {
     <>
       <div className="">
         <RestroInformation restroInfo={restroInfo} />
-        <RestroMenuCard restroMenu={restroMenu} />
+        <RestroMenuCard restroMenu={restaurantMenu[id]} />
       </div>
     </>
   );
