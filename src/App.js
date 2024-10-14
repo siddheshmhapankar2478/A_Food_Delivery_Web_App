@@ -14,39 +14,21 @@ import store from "./utils/store";
 import { Provider } from "react-redux";
 import Cart from "./component/Cart";
 import Login from "./component/Login";
-import axios from "axios"
 // const Instamart=lazy(()=>import('./component/Instamart'));
 
-const AppLayout=()=>{
-    const [backendData,setBackendData]=useState([]);
-    const fetchData=async()=>{
-        const {data} = await axios.get("/api/users");
-        console.log(data);
-        setBackendData(data);
-    }
-    useEffect(() => {
-        // fetch("http://localhost:5000/api").then(
-        //     response=>response.json()
-        //     ).then(
-        //       data=>{
-        //         console.log(data);
-        //         setBackendData(data);
-        //       });
-        fetchData();
-          }, []);
-    return(
-        <>
-            <div className="flex flex-col min-h-screen">
-                <Provider store={store}>
-                    <Header/>
-                    <Outlet/>
-                    <Footer/>
-                </Provider>
-
-            </div>
-        </>
-    );
-}
+const AppLayout = () => {
+  return (
+    <>
+      <div className="flex flex-col min-h-screen">
+        <Provider store={store}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </Provider>
+      </div>
+    </>
+  );
+};
 const appRouter=createBrowserRouter([
     {
         path:"/",
