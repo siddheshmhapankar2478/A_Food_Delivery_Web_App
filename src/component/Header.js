@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import food_delivery_logo from "../assets/Image/food_delivery_logo.png"
 import { useSelector } from "react-redux";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import food_villa_logo from "../assets/Image/food_villa_logo.png"
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import food_delivery_logo from "../assets/Image/food_delivery_logo.png"
 import { useSelector } from "react-redux";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
